@@ -4,7 +4,7 @@ import xml.etree.ElementTree as ET
 
 file = open('Input/news_articles.xml', 'r')
 lines = file.readlines()
-file = open('output.csv', 'w')
+file = open('news_articles.csv', 'w')
 writer = csv.writer(file)
 
 for line in lines:
