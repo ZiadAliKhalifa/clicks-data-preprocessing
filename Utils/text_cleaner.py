@@ -20,7 +20,7 @@ class CleanText():
                                 ـ     # Tatwil/Kashida
                             """, re.VERBOSE)
 
-    def normalize_arabic(self, text):
+    def normalize_arabic_alphabet(self, text):
         text = re.sub("[إأآا]", "ا", text)
         text = re.sub("ى", "ي", text)
         text = re.sub("ؤ", "ء", text)
@@ -39,3 +39,9 @@ class CleanText():
 
     def remove_repeating_char(self, text):
         return re.sub(r'(.)\1+', r'\1', text)
+
+    def normalize_text(self, text):
+        text = self.normalize_arabic_alphabet(text)
+        text = self.remove_diacritics(text)
+        text = self.remove_repeating_char(text)
+        return text
