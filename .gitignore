@@ -141,4 +141,7 @@ dmypy.json
 # profiling data
 .prof
 
+*.csv
+settings.json
+
 # End of https://www.toptal.com/developers/gitignore/api/python
