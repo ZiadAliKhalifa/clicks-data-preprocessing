@@ -21,6 +21,9 @@ class CleanText():
                             """, re.VERBOSE)
 
     def normalize_arabic_alphabet(self, text):
+        """
+            Replace any special characters for unity
+        """
         text = re.sub("[إأآا]", "ا", text)
         text = re.sub("ى", "ي", text)
         text = re.sub("ؤ", "ء", text)
@@ -30,17 +33,29 @@ class CleanText():
         return text
 
     def remove_diacritics(self, text):
+        """
+            Remove all diacritic symbols
+        """
         text = re.sub(self._arabic_diacritics, '', text)
         return text
 
     def remove_punctuations(self, text):
+        """
+            Remove all punctuation symbols
+        """
         translator = str.maketrans('', '', self._punctuations_list)
         return text.translate(translator)
 
     def remove_repeating_char(self, text):
+        """
+            Remove all repeating characters
+        """
         return re.sub(r'(.)\1+', r'\1', text)
 
     def normalize_text(self, text):
+        """
+            Runs all methods of class on a string of text
+        """
         text = self.normalize_arabic_alphabet(text)
         text = self.remove_diacritics(text)
         text = self.remove_repeating_char(text)

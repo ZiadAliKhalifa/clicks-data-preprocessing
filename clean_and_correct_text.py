@@ -15,22 +15,18 @@ text_cleaner = CleanText()
 with open('news_articles.csv',  "rt", encoding="utf-8") as csvfile:
     datareader = csv.reader(csvfile)
 
-    count = 0
-
     for row in datareader:
-
-        count += 1
         # Remove punctuation from the title and the article
         cleaned_title = text_cleaner.remove_punctuations(row[1])
         cleaned_article = text_cleaner.remove_punctuations(row[2])
 
         # Correct spelling
+
+        # Split titles and articles into words
+        # Check if any of the words are in the common mistakes dict
+        # Replace them with correct value if they do
         splitted_title = str.split(cleaned_title, " ")
         splitted_article = str.split(cleaned_article, " ")
-
-        print("+++++++++++")
-        print(row[0])
-        print(len(splitted_article))
 
         corrected_title_array = []
         corrected_article_array = []
@@ -47,14 +43,11 @@ with open('news_articles.csv',  "rt", encoding="utf-8") as csvfile:
             else:
                 corrected_article_array.append(word)
 
-        print(len(corrected_article_array))
-
         corrected_title = ' '.join(corrected_title_array)
         corrected_article = ' '.join(corrected_article_array)
 
-        print(len(corrected_article))
-        print("-------------")
-
+        # Write it output to a new CSV file
         writer.writerow([row[0], corrected_title, corrected_article])
 
+# Remove the previous CSV file that was used as input
 os.remove('news_articles.csv')
