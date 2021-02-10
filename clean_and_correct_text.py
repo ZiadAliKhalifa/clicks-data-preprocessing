@@ -8,7 +8,7 @@ dictionary_file = open('../Resources/word_dictionary.json')
 dictionary = load(dictionary_file)
 
 
-output_file = open('no_punc_news_articles.csv', 'w')
+output_file = open('clean_news_articles.csv', 'w')
 writer = csv.writer(output_file)
 text_cleaner = CleanText()
 
@@ -46,8 +46,12 @@ with open('news_articles.csv',  "rt", encoding="utf-8") as csvfile:
         corrected_title = ' '.join(corrected_title_array)
         corrected_article = ' '.join(corrected_article_array)
 
+        # Normalize text
+        normalized_title = text_cleaner.normalize_text(corrected_title)
+        normalized_article = text_cleaner.normalize_text(corrected_article)
+
         # Write it output to a new CSV file
-        writer.writerow([row[0], corrected_title, corrected_article])
+        writer.writerow([row[0], normalized_title, normalized_article])
 
 # Remove the previous CSV file that was used as input
 os.remove('news_articles.csv')
