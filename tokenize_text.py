@@ -23,10 +23,9 @@ def tokenize_text():
                 word for word in splitted_article if not is_stop(word) and not str.isspace(word)]
 
             tokenized_articles.append({
-                row[0]: {
-                    'title': stripped_title,
-                    'article': stripped_article
-                }
+                'id': row[0],
+                'title': stripped_title,
+                'article': stripped_article
             })
 
         dump(tokenized_articles, output_file, ensure_ascii=False)
