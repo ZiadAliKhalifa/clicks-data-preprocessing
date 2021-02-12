@@ -143,5 +143,6 @@ dmypy.json
 
 *.csv
 settings.json
+tokenized_text.json
 
 # End of https://www.toptal.com/developers/gitignore/api/python
