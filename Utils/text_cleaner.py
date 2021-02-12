@@ -50,7 +50,7 @@ class CleanText():
         """
             Remove all repeating characters
         """
-        return re.sub(r'(.)\1+', r'\1', text)
+        return re.sub(r'(.)\2+', r'\1', text)
 
     def normalize_text(self, text):
         """
@@ -58,5 +58,5 @@ class CleanText():
         """
         text = self.normalize_arabic_alphabet(text)
         text = self.remove_diacritics(text)
-        text = self.remove_repeating_char(text)
+
         return text
