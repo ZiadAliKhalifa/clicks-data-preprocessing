@@ -141,6 +141,9 @@ STOPWORDS={u'وعداهم': [{'vocalized': u'وعداهم', 'procletic': u'و-',
  {'vocalized': u'ولأقلي', 'procletic': u'و-ل-', 'tags': u'اسم;اسم تفضيل;مجرور;عطف;ضمير', 'stem': u'أقل', 'encletic': u'-ي', 'type': u'اسم', 'original': u'أقل'}],
 
  u'إلى': [{'vocalized': u'إلى', 'procletic': u'', 'tags': u'حرف;حرف جر', 'stem': u'إلى', 'encletic': u'', 'type': u'حرف', 'original': u'إلى'}],
+ 
+ # Added by me to fix a slight problem with normalization
+ u'الي': [{'vocalized': u'الى', 'procletic': u'', 'tags': u'حرف;حرف جر', 'stem': u'الي', 'encletic': u'', 'type': u'حرف', 'original': u'الي'}],
 
  u'فلتلقاءها': [{'vocalized': u'فلتلقاءها', 'procletic': u'ف-ل-', 'tags': u'اسم;اسم إضافة;مجرور;عطف;ضمير', 'stem': u'تلقاء', 'encletic': u'-ها', 'type': u'اسم', 'original': u'تلقاء'}],
 
@@ -26346,6 +26349,12 @@ STOPWORDS={u'وعداهم': [{'vocalized': u'وعداهم', 'procletic': u'و-',
  {'vocalized': u'إن', 'procletic': u'', 'tags': u'حرف;المشبهة بليس', 'stem': u'إن', 'encletic': u'', 'type': u'حرف', 'original': u'إن'},
  {'vocalized': u'إن', 'procletic': u'', 'tags': u'حرف;حرف جزم', 'stem': u'إن', 'encletic': u'', 'type': u'حرف', 'original': u'إن'},
  {'vocalized': u'إن', 'procletic': u'', 'tags': u'حرف;حرف شرط', 'stem': u'إن', 'encletic': u'', 'type': u'حرف', 'original': u'إن'}],
+
+# Added by me to fix a slight problem with normalization
+ u'ان': [{'vocalized': u'ان', 'procletic': u'', 'tags': u'حرف;إن و أخواتها', 'stem': u'ان', 'encletic': u'', 'type': u'حرف', 'original': u'ان'},
+ {'vocalized': u'ان', 'procletic': u'', 'tags': u'حرف;المشبهة بليس', 'stem': u'ان', 'encletic': u'', 'type': u'حرف', 'original': u'ان'},
+ {'vocalized': u'ان', 'procletic': u'', 'tags': u'حرف;حرف جزم', 'stem': u'ان', 'encletic': u'', 'type': u'حرف', 'original': u'ان'},
+ {'vocalized': u'ان', 'procletic': u'', 'tags': u'حرف;حرف شرط', 'stem': u'ان', 'encletic': u'', 'type': u'حرف', 'original': u'ان'}],
 
  u'لحميكما': [{'vocalized': u'لحميكما', 'procletic': u'ل-', 'tags': u'اسم;الأسماء الخمسة;مجرور;ضمير', 'stem': u'حمي', 'encletic': u'-كما', 'type': u'اسم', 'original': u'حمي'}],
 
