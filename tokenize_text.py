@@ -18,9 +18,9 @@ def tokenize_text():
             splitted_article = str.split(row[2], " ")
 
             stripped_title = [
-                word for word in splitted_title if not is_stop(word) and not str.isspace(word)]
+                word for word in splitted_title if not is_stop(word) and not str.isspace(word) and len(word) > 0]
             stripped_article = [
-                word for word in splitted_article if not is_stop(word) and not str.isspace(word)]
+                word for word in splitted_article if not is_stop(word) and not str.isspace(word) and len(word) > 0]
 
             tokenized_articles.append({
                 'id': row[0],
